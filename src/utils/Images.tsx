@@ -1,0 +1,4 @@
+export const IMAGES = {
+  LOGO: require('../assets/images/insta-logo.png'),
+  FLARE: require('../assets/images/flare.png'),
+};
