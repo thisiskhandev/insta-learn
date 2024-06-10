@@ -1,61 +1,42 @@
-import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {Container} from '../components/common/Container';
-import Logo from '../components/common/Logo';
-import Flare from '../components/common/Flare';
+import Subtitle from '../components/common/Subtitle';
+import Button from '../components/common/Button';
+import {AuthHeader} from '../components/common/AuthHeader';
+import CenterItems from '../components/common/CenterItems';
+import {verticalScale} from 'react-native-size-matters';
+import React, {useState} from 'react';
+import {Image, Text, TextInput, View} from 'react-native';
+import {COLORS} from '../utils/colors';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {FontSize} from '../types';
+import {IMAGES} from '../utils/Images';
+import InputField from '../components/common/InputField';
 
 const Login = () => {
   return (
     <Container>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          // backgroundColor: 'red',
-        }}>
-        <Logo />
-        <Flare />
-        <Text style={styles.heading}>Let's get started</Text>
-        <Text style={styles.txt}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor
-        </Text>
-        <TouchableOpacity>
-          <Text>Create Account</Text>
-        </TouchableOpacity>
-      </View>
+      <CenterItems>
+        <AuthHeader
+          titleTxt="Sign in"
+          logoStyle={{width: verticalScale(200)}}
+        />
+        <InputField placeholderTxt="Username" isLeftIcon />
+        <InputField
+          placeholderTxt="Password"
+          isLeftIcon
+          isRightIcon
+          rightIconContainerStyle={{
+            backgroundColor: COLORS.TRANSPARENT,
+            borderRadius: 100,
+          }}
+          cursorColor={COLORS.ACCENT}
+          isTypeSecure
+        />
+        <Button btnTitle="Sign In" />
+        <Subtitle subTitleTxt="Or Sign in with?" subStyle={{marginTop: 30}} />
+      </CenterItems>
     </Container>
   );
 };
 
 export default Login;
-
-var styles = StyleSheet.create({
-  heading: {
-    color: '#fff',
-    fontSize: 28,
-    fontWeight: 'bold',
-  },
-  txt: {
-    opacity: 0.3,
-    fontSize: 17,
-    textAlign: 'center',
-    color: '#fff',
-    marginTop: 10,
-  },
-  linearGradient: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
-  },
-  buttonText: {
-    fontSize: 18,
-    fontFamily: 'Gill Sans',
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-    backgroundColor: 'transparent',
-  },
-});

@@ -1,3 +1,4 @@
+import GetStarted from './src/screens/GetStarted';
 import Login from './src/screens/Login';
 
 const App = () => {

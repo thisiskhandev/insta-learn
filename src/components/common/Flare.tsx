@@ -8,10 +8,14 @@ interface FlareProps {
 
 export const Flare = ({extraStyle}: FlareProps) => {
   return (
-    <View>
-      <Image source={IMAGES.FLARE} style={[styles.img, extraStyle]} />
-      {/* <Image source={flare} style={styles.img} /> */}
-    </View>
+    // <View>
+    <Image
+      source={IMAGES.FLARE}
+      style={[styles.img, extraStyle]}
+      resizeMode="contain"
+    />
+    //   {/* <Image source={flare} style={styles.img} /> */}
+    // </View>
   );
 };
 
@@ -20,11 +24,14 @@ export default Flare;
 const styles = StyleSheet.create({
   img: {
     position: 'absolute',
-    zIndex: 100,
-    alignSelf: 'center',
-    bottom: '100%',
-    top: 10,
-    alignItems: 'center',
-    width: '100%',
+    // alignSelf: 'center',
+    // bottom: '-1%',
+    // alignItems: 'center',
+    zIndex: 0,
+    top: 0,
+    // width: '120%',
+    // height: '100%',
+    objectFit: 'cover',
+    // backgroundColor: 'red',
   },
 });
