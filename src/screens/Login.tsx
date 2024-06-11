@@ -5,12 +5,9 @@ import {AuthHeader} from '../components/common/AuthHeader';
 import CenterItems from '../components/common/CenterItems';
 import {verticalScale} from 'react-native-size-matters';
 import React, {useState} from 'react';
-import {Image, Text, TextInput, View} from 'react-native';
 import {COLORS} from '../utils/colors';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {FontSize} from '../types';
-import {IMAGES} from '../utils/Images';
 import InputField from '../components/common/InputField';
+import {FeatherIcon} from '../components/common/iconComponent';
 
 const Login = () => {
   return (
@@ -20,10 +17,19 @@ const Login = () => {
           titleTxt="Sign in"
           logoStyle={{width: verticalScale(200)}}
         />
-        <InputField placeholderTxt="Username" isLeftIcon />
+        <InputField
+          placeholderTxt="Username"
+          isLeftIcon
+          leftVectorIcon="Feather"
+          leftIconName="user"
+        />
         <InputField
           placeholderTxt="Password"
+          rightIconName="eye"
           isLeftIcon
+          leftVectorIcon="Feather"
+          leftIconName="lock"
+          rightVectorIcon="Entypo"
           isRightIcon
           rightIconContainerStyle={{
             backgroundColor: COLORS.TRANSPARENT,

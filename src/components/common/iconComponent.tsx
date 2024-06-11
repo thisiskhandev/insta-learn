@@ -8,6 +8,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {GestureResponderEvent, TextStyle} from 'react-native';
+
+
 type Props = {
   iconName: string;
   size: number;
@@ -20,6 +22,8 @@ const commonIconStyle = {
   color: 'red',
   fontSize: 16,
 };
+
+
 export const FontAwesomeIcon = ({
   iconName,
   size,
@@ -37,6 +41,7 @@ export const FontAwesomeIcon = ({
     />
   );
 };
+
 export const EntypoIcon = ({
   iconName,
   size,
@@ -54,6 +59,7 @@ export const EntypoIcon = ({
     />
   );
 };
+
 export const FeatherIcon = ({
   iconName,
   size,
@@ -71,6 +77,7 @@ export const FeatherIcon = ({
     />
   );
 };
+
 export const EvilIconsIcon = ({
   iconName,
   size,
@@ -88,6 +95,7 @@ export const EvilIconsIcon = ({
     />
   );
 };
+
 export const AntDesignIcon = ({
   iconName,
   size,
@@ -105,6 +113,7 @@ export const AntDesignIcon = ({
     />
   );
 };
+
 export const FontAwesome5Icon = ({
   iconName,
   size,
@@ -122,6 +131,7 @@ export const FontAwesome5Icon = ({
     />
   );
 };
+
 export const IoniconsIcon = ({
   iconName,
   size,
@@ -139,6 +149,7 @@ export const IoniconsIcon = ({
     />
   );
 };
+
 export const MaterialCommunityIconsIcon = ({
   iconName,
   size,
@@ -152,9 +163,11 @@ export const MaterialCommunityIconsIcon = ({
       size={size}
       color={color}
       onPress={onPress}
+      style={[commonIconStyle, iconStyle]}
     />
   );
 };
+
 export const MaterialIconsIcon = ({
   iconName,
   size,
@@ -168,6 +181,7 @@ export const MaterialIconsIcon = ({
       size={size}
       color={color}
       onPress={onPress}
+      style={[commonIconStyle, iconStyle]}
     />
   );
 };
