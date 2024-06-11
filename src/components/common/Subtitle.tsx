@@ -1,4 +1,6 @@
 import {StyleSheet, Text, StyleProp, TextStyle} from 'react-native';
+import {COLORS} from '../../utils/colors';
+import {FontFamily, FontSize} from '../../types';
 
 interface SubtitleProps {
   subTitleTxt?: string;
@@ -19,9 +21,10 @@ export default Subtitle;
 const styles = StyleSheet.create({
   txt: {
     opacity: 0.4,
-    fontSize: 17,
+    fontSize: FontSize.Medium_Large,
+    fontFamily: FontFamily.Nunito,
     textAlign: 'center',
-    color: '#fff',
+    color: COLORS.WHITE,
     marginTop: 20,
     lineHeight: 25,
   },

@@ -11,6 +11,7 @@ import {
   ColorValue,
   KeyboardTypeOptions,
   TouchableOpacity,
+  GestureResponderEvent,
 } from 'react-native';
 
 // Import Utils
@@ -67,6 +68,7 @@ interface InputProps {
   inpStyle?: StyleProp<ViewStyle>;
   cursorColor?: ColorValue;
   isTypeSecure?: boolean;
+  onPress?: ((event: GestureResponderEvent) => void) | undefined;
   onChange?: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void;
   onChangeText?: (text: string) => void;
   onKeyPress?: (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => void;
@@ -101,6 +103,7 @@ const InputField = (props: InputProps) => {
     inpStyle,
     cursorColor,
     isTypeSecure,
+    onPress,
     onChange,
     onChangeText,
     onKeyPress,
@@ -149,7 +152,7 @@ const InputField = (props: InputProps) => {
         secureTextEntry={isTypeSecure ?? false}
       />
       {isRightIcon && RightIcon && (
-        <TouchableOpacity style={styles.touchIconStyle}>
+        <TouchableOpacity style={styles.touchIconStyle} onPress={onPress}>
           <View style={[styles.iconContainerDefault, rightIconContainerStyle]}>
             <RightIcon
               style={[rightIconStyle || styles.iconStyleDefault, {padding: 0}]}

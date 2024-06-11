@@ -1,16 +1,22 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from 'react-native';
 import {COLORS} from '../../utils/colors';
+import {FontFamily, FontSize, FontWeight} from '../../types';
 
 interface LinkableProps {
   linkTitle?: string;
-  link?: string;
+  onPress?: ((event: GestureResponderEvent) => void) | undefined;
 }
 
-const Linkable = ({linkTitle, link}: LinkableProps) => {
+const Linkable = ({linkTitle, onPress}: LinkableProps) => {
   return (
-    <View>
+    <TouchableOpacity onPress={onPress}>
       <Text style={styles.txt}>{linkTitle}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -19,8 +25,9 @@ export default Linkable;
 const styles = StyleSheet.create({
   txt: {
     color: COLORS.ACCENT,
-    fontWeight: 'bold',
+    fontWeight: FontWeight.Bold,
     textDecorationLine: 'underline',
-    
+    fontSize: FontSize.Medium,
+    fontFamily: FontFamily.Nunito,
   },
 });
